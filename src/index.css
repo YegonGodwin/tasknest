@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 221 83% 53%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 221 83% 53%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 19% 27%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 19% 27%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 19% 27%;
+    --input: 217 19% 27%;
+    --ring: 224 76% 48%;
+
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 217 19% 27%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 19% 27%;
+    --sidebar-ring: 224 76% 48%;
+  }
+
+  * {
+    @apply border-border selection:bg-primary/10 selection:text-primary;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border border-white/20 dark:border-white/10 shadow-sm;
+  }
+  
+  .page-container {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .button-hover {
+    @apply hover:shadow-md transition-all duration-300;
+  }
+  
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .stagger-animation > * {
+    opacity: 0;
+  }
+
+  .stagger-animation > *:nth-child(1) {
+    animation: fade-up 0.5s ease-out forwards;
+  }
+
+  .stagger-animation > *:nth-child(2) {
+    animation: fade-up 0.5s ease-out 0.1s forwards;
+  }
+
+  .stagger-animation > *:nth-child(3) {
+    animation: fade-up 0.5s ease-out 0.2s forwards;
+  }
+
+  .stagger-animation > *:nth-child(4) {
+    animation: fade-up 0.5s ease-out 0.3s forwards;
+  }
+
+  .stagger-animation > *:nth-child(5) {
+    animation: fade-up 0.5s ease-out 0.4s forwards;
+  }
+  
+  /* New utility classes */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px];
+  }
+  
+  .card-gradient {
+    @apply bg-gradient-to-br from-white to-secondary/30 dark:from-gray-900 dark:to-secondary/10;
+  }
+  
+  .icon-bg {
+    @apply p-3 rounded-full bg-primary/10 text-primary;
+  }
+  
+  .section-title {
+    @apply text-3xl font-bold tracking-tight;
+  }
+  
+  .section-subtitle {
+    @apply text-lg text-muted-foreground max-w-3xl mx-auto;
+  }
+
+  /* Dark mode container enhancements */
+  .dark .card-container {
+    @apply bg-gray-800/90 border-gray-700 shadow-lg;
+  }
+  
+  .dark .content-container {
+    @apply bg-gray-900/90 border-gray-700;
+  }
+  
+  .dark .hover-container {
+    @apply hover:bg-gray-800 hover:border-gray-600;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
