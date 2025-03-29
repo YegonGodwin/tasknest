@@ -1,4 +1,4 @@
-# 🚀 Welcome to TaskNest
+# 🚀👥 Welcome to TaskNest
 
 **The smartest way to manage projects and collaborate with your team!**
 
@@ -15,7 +15,7 @@
 ### 🎯 Quick Actions
 
 🔹 **Create New Project**  
-🔹 **View Projects**  
+🔹 **📊View Projects**  
 🔹 **Invite Team Members**  
 🔹 **Generate Reports**
 
