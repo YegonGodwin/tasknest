@@ -35,5 +35,6 @@
 ```bash
 git clone https://github.com/your-repo/tasknest.git
 npm install
-npm start
+npm run build
+npm run preview
 ```
